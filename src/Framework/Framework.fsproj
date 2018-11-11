@@ -5,8 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="AnimationProperties.fs" />
     <Compile Include="Frame.fs" />
     <Compile Include="Output\IVideoOutput.fs" />
+    <Compile Include="Output\FFmpegOutput.fs" />
     <Compile Include="Output\RawFrameOutput.fs" />
     <Compile Include="Animation.fs" />
   </ItemGroup>

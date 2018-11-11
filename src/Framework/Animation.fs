@@ -5,19 +5,14 @@ open SkiaSharp
 open System
 open System.Runtime.InteropServices
 
-type public AnimationLength = 
-    | FrameCount of int
-    | Seconds of float
+type public Animation(properties: AnimationProperties, backgroundColor: SKColor, output: IVideoOutput) =
 
-type public Animation(width: int, height: int, length: AnimationLength, fps: float, 
-                      backgroundColor: SKColor, output: IVideoOutput) =
-
-    let frame = new Frame(width, height)
+    let frame = new Frame(properties.Width, properties.Height)
     let frameCount = 
-        match length with
+        match properties.Length with
             | FrameCount count -> count
-            | Seconds seconds -> int (Math.Ceiling(seconds * fps))
-    let imageInfo = new SKImageInfo(width, height, SKColorType.Bgra8888)
+            | Seconds seconds -> int (Math.Ceiling(seconds * properties.Fps))
+    let imageInfo = new SKImageInfo(properties.Width, properties.Height, SKColorType.Bgra8888)
 
     let DrawOnCurrentFrame(callback: SKCanvas -> unit): unit =
 
@@ -30,7 +25,7 @@ type public Animation(width: int, height: int, length: AnimationLength, fps: flo
         )
         pinnedBytes.Free()
 
-    let RenderFrame(index: int): unit = 
+    let RenderFrame(index: int): unit =
 
         DrawOnCurrentFrame(fun canvas -> ())
 

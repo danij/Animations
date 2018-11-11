@@ -4,9 +4,11 @@ open SkiaSharp
 
 let createSampleAnimation(): unit = 
 
-    using (new RawFrameOutput("frame-{0:0000}.raw")) (fun output ->
+    let properties = new AnimationProperties(width = 800, height = 600, length = FrameCount(10), fps = 2.0)
 
-        let animation = new Animation(800, 600, FrameCount(10), 2.0, SKColors.AliceBlue, output)
+    using (new FFmpegOutput("animation.mp4", properties)) (fun output ->
+
+        let animation = new Animation(properties, SKColors.AliceBlue, output)
         animation.Run()
     )
 
