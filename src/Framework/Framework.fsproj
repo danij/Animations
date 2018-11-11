@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Library.fs" />
+    <Compile Include="Frame.fs" />
+    <Compile Include="Output\IVideoOutput.fs" />
+    <Compile Include="Output\RawFrameOutput.fs" />
   </ItemGroup>
 
 </Project>
