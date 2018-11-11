@@ -8,6 +8,7 @@
     <Compile Include="Frame.fs" />
     <Compile Include="Output\IVideoOutput.fs" />
     <Compile Include="Output\RawFrameOutput.fs" />
+    <Compile Include="Animation.fs" />
   </ItemGroup>
 
 </Project>
