@@ -7,6 +7,9 @@
   <ItemGroup>
     <Compile Include="AnimationProperties.fs" />
     <Compile Include="Frame.fs" />
+    <Compile Include="DrawContext.fs" />
+    <Compile Include="Actors\IActor.fs" />
+    <Compile Include="Actors\ActorCollection.fs" />
     <Compile Include="Output\IVideoOutput.fs" />
     <Compile Include="Output\FFmpegOutput.fs" />
     <Compile Include="Output\RawFrameOutput.fs" />
