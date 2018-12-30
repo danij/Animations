@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Class1.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="SkiaSharp, Version=1.68.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
+        <HintPath>..\..\..\..\..\.nuget\packages\skiasharp\1.68.0\lib\netstandard1.3\SkiaSharp.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>
