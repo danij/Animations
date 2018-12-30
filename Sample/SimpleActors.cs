@@ -16,6 +16,14 @@ namespace Sample
             Style = SKPaintStyle.StrokeAndFill,
             IsAntialias = true
         }; 
+        private static readonly SKPaint BlackPaint = new SKPaint
+        {
+            Color = SKColors.Black,
+            Style = SKPaintStyle.StrokeAndFill,
+            TextSize = 24,
+            TextAlign = SKTextAlign.Left,
+            IsAntialias = true
+        }; 
         
         public static void DrawBlueRectangle(IDrawContext context)
         {
@@ -24,7 +32,13 @@ namespace Sample
         
         public static void DrawRedCircle(IDrawContext context)
         {
-            context.Canvas.DrawCircle(new SKPoint(400, 400), 100, RedPaint);
+            context.Canvas.DrawCircle(new SKPoint(600, 400), 100, RedPaint);
+        }
+        
+        public static void DrawTime(IDrawContext context)
+        {
+            var time = context.Time.ToString("g");
+            context.Canvas.DrawText(time, new SKPoint(50, 400), BlackPaint);
         }
     }
 }

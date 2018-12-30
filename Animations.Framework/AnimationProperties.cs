@@ -28,6 +28,22 @@ namespace Animations.Framework
             }
         }
         
+        public TimeSpan TimeLength
+        {
+            get
+            {
+                switch (Length.Type)
+                {
+                    case AnimationLength.ValueType.FrameCount:
+                        return TimeSpan.FromSeconds(((double)(int) Length.Value) / Fps);
+                    case AnimationLength.ValueType.TimeLength:
+                        return (TimeSpan) Length.Value;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+        
         public int Width { get; }
         public int Height { get; }
         public AnimationLength Length { get; }
